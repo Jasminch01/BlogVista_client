@@ -4,6 +4,7 @@ import Home from "../Pages/Home";
 import AllBlogs from "../Pages/AllBlogs";
 import FeaturedBlogs from "../Pages/FeaturedBlogs";
 import AddBlogs from "../Pages/AddBlogs";
+import Login from "../Pages/Login";
 
 const Router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ const Router = createBrowserRouter([
                 element : <FeaturedBlogs/>
             }
         ])
+    },
+    {
+        path : '/login',
+        element : <Login/>
     }
 ])
 
