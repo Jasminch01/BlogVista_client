@@ -7,24 +7,47 @@ const Home = () => {
     <div>
       <Banner />
       <Container>
-        <div className="grid grid-cols-2 gap-5 mt-10">
-          {newsCard.map((news, idx) => (
-            <div key={idx} className="card bg-base-100 shadow-xl">
-              <figure>
-                <img
-                  src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                  alt="Shoes"
-                />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">Shoes!</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                  <button className="btn btn-primary">Buy Now</button>
+        <div className="flex flex-col-reverse md:flex-row gap-5 justify-center mt-10 p-5 md:-p-0">
+          <div className="w-4/2 ">
+            <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
+              {newsCard.map((news, idx) => (
+                <div key={idx} className="bg-base-100">
+                  <figure>
+                    <img
+                      className="rounded"
+                      src="https://i.ibb.co/J5RLcQ9/brooke-lark-n-TZOILVZu-Og-unsplash.jpg"
+                      alt="Shoes"
+                    />
+                  </figure>
+                  <div className="my-5">
+                    <h2 className="card-title mb-3">
+                      The Art of Minimalism: Simplify Your Life
+                    </h2>
+                    <p>
+                      Learn how embracing minimalism can bring clarity, focus,
+                      and contentment to your life, from decluttering your space
+                      to prioritizing what truly matters.
+                    </p>
+                    <p className="mt-4">April 12, 2024</p>
+                  </div>
                 </div>
+              ))}
+            </div>
+          </div>
+          <div className="">
+            <div className="card bg-[#e6f3ff] h-screen">
+              <div className="card-body">
+                <h2 className="card-title">
+                  The Art of Minimalism: Simplify Your Life
+                </h2>
+                <p>
+                  Learn how embracing minimalism can bring clarity, focus, and
+                  contentment to your life, from decluttering your space to
+                  prioritizing what truly matters.
+                </p>
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </Container>
     </div>

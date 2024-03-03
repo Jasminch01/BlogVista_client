@@ -41,7 +41,7 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar max-w-7xl mx-auto md:px-20 p-5 absolute top-0 left-0 right-0 z-50">
+      <div className="navbar max-w-7xl mx-auto py-5 absolute top-0 left-0 right-0 z-50">
         <div className="navbar-start md:w-[15%] w-[50%]">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
