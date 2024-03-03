@@ -6,7 +6,7 @@ const Banner = () => {
           <div className="justify-start">
             <img
               src="https://i.ibb.co/J5RLcQ9/brooke-lark-n-TZOILVZu-Og-unsplash.jpg"
-              className="md:max-w-md rounded-lg"
+              className="md:min-w-sm rounded-lg "
             />
           </div>
           <div className="md:space-y-3 md:w-[70%]">

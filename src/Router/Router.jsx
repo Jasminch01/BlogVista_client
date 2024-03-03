@@ -6,38 +6,43 @@ import FeaturedBlogs from "../Pages/FeaturedBlogs";
 import AddBlogs from "../Pages/AddBlogs";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
+import Wishlist from "../Pages/Wishlist";
 
 const Router = createBrowserRouter([
-    {
-        path : '/',
-        element : <Layout/>,
-        children : ([
-            {
-                 index : true,
-                 element : <Home/>
-            },
-            {
-                path : '/add-blogs',
-                element : <AddBlogs/>
-            },
-            {
-                path : '/all-blogs',
-                element : <AllBlogs/>
-            },
-            {
-                path : '/featured-blogs',
-                element : <FeaturedBlogs/>
-            }
-        ])
-    },
-    {
-        path : '/login',
-        element : <Login/>
-    },
-    {
-        path : '/sign-up',
-        element : <Register/>
-    }
-])
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+      {
+        path: "/add-blogs",
+        element: <AddBlogs />,
+      },
+      {
+        path: "/all-blogs",
+        element: <AllBlogs />,
+      },
+      {
+        path: "/featured-blogs",
+        element: <FeaturedBlogs />,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist />,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/sign-up",
+    element: <Register />,
+  },
+]);
 
 export default Router;

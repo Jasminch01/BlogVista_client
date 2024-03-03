@@ -37,6 +37,14 @@ const Navbar = () => {
       >
         Featured Blogs
       </NavLink>
+      <NavLink
+        to={"/wishlist"}
+        className={({ isActive, isPending }) =>
+          isPending ? "pending" : isActive ? "text-green-500 font-medium" : "font-medium"
+        }
+      >
+        Wishlist
+      </NavLink>
     </>
   );
   return (
@@ -80,8 +88,8 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "py-2 px-3 bg-black text-white rounded-full"
-                  : ""
+                  ? "py-2 px-3 bg-black text-white font-bold"
+                  : "font-bold"
               }
             >
               Log in
@@ -92,8 +100,8 @@ const Navbar = () => {
                 isPending
                   ? "pending"
                   : isActive
-                  ? "py-2 px-3 bg-black text-white rounded-full"
-                  : ""
+                  ? "py-2 px-3 bg-black text-white font-bold"
+                  : "font-bold"
               }
             >
               Sign up

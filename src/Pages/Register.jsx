@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Register = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
+    <div className="hero min-h-screen bg-[#e6f3ff]">
       <div className="flex  items-center  gap-5 max-w-7xl mx-auto flex-col lg:flex-row-reverse">
         <div className="card w-96 shrink-0 shadow-2xl bg-base-100">
           <form className="card-body">
