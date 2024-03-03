@@ -1,33 +1,40 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import UseAuth from "../Hooks/UseAuth";
-const Login = () => {
-  const { signInGoogle } = UseAuth();
-  const googleLogin = () => {
-    signInGoogle()
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+
+const Register = () => {
   return (
     <div className="hero min-h-screen bg-base-200">
       <div className="flex  items-center  gap-5 max-w-7xl mx-auto flex-col lg:flex-row-reverse">
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card w-96 shrink-0 shadow-2xl bg-base-100">
           <form className="card-body">
             <div className="mb-5">
               <h1 className="text-2xl font-bold text-center">
-                Welcome Back to{" "}
+                Register{" "}
                 <span className="text-green-400">BlogVista</span>
               </h1>
-              <p className="text-center">
-                {`Don't`} have Account yet?{" "}
-                <Link to={`/sign-up`} className="text-green-400">
-                  Sign up
-                </Link>{" "}
-              </p>
+              <p className="text-center">{`Don't`} Already have Account ? <Link to={`/login`} className="text-green-400">login</Link> </p>
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Name"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Photo URL"
+                className="input input-bordered"
+                required
+              />
             </div>
             <div className="form-control">
               <label className="label">
@@ -58,9 +65,7 @@ const Login = () => {
             </div>
             <p className="text-center">OR</p>
             <div className="text-center">
-              <button onClick={googleLogin}
-                className="py-2 bg-slate-200 rounded px-4 text-white uppercase font-bold"
-              >
+              <button className="py-2 bg-slate-200 rounded px-4 text-white uppercase font-bold">
                 <FcGoogle size={20} />
               </button>
             </div>
@@ -71,4 +76,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

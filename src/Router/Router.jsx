@@ -5,6 +5,7 @@ import AllBlogs from "../Pages/AllBlogs";
 import FeaturedBlogs from "../Pages/FeaturedBlogs";
 import AddBlogs from "../Pages/AddBlogs";
 import Login from "../Pages/Login";
+import Register from "../Pages/Register";
 
 const Router = createBrowserRouter([
     {
@@ -32,6 +33,10 @@ const Router = createBrowserRouter([
     {
         path : '/login',
         element : <Login/>
+    },
+    {
+        path : '/sign-up',
+        element : <Register/>
     }
 ])
 
