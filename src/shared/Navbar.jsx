@@ -130,18 +130,12 @@ const Navbar = () => {
             </div>
           ) : (
             <div className="space-x-3">
-              <NavLink
+              <Link
                 to={`/login`}
-                className={({ isActive, isPending }) =>
-                  isPending
-                    ? "pending"
-                    : isActive
-                    ? "py-2 px-3 bg-black text-white font-bold"
-                    : "font-bold"
-                }
+                className="py-2 px-3 bg-black font-bold text-white rounded-full"
               >
                 Log in
-              </NavLink>
+              </Link>
             </div>
           )}
         </div>

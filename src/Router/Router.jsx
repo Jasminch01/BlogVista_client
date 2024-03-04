@@ -7,6 +7,7 @@ import AddBlogs from "../Pages/AddBlogs";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Wishlist from "../Pages/Wishlist";
+import PrivetRoute from "./PrivetRoute";
 
 const Router = createBrowserRouter([
   {
@@ -23,7 +24,12 @@ const Router = createBrowserRouter([
       },
       {
         path: "/all-blogs",
-        element: <AllBlogs />,
+        element: (
+          <PrivetRoute>
+            {" "}
+            <AllBlogs />
+          </PrivetRoute>
+        ),
       },
       {
         path: "/featured-blogs",
