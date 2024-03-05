@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'; 
 const Container = ({children}) => {
-  return <div className="max-w-7xl mx-auto">
+  return <div className="max-w-[95rem] mx-auto">
     {children}
   </div>;
 };

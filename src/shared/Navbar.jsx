@@ -1,9 +1,22 @@
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import UseAuth from "../Hooks/UseAuth";
+import { useState } from "react";
+import AddblogsModal from "../Components/AddblogsModal";
 
 const Navbar = () => {
   const { user, logOut } = UseAuth();
-  console.log(user)
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate()
+
+  const handleOpen = () => {
+    if (user) {
+      setIsOpen(!isOpen);
+    }else {
+      navigate('/login')
+    }
+  };
+
+  console.log(isOpen);
   const navlist = (
     <>
       <NavLink
@@ -18,20 +31,9 @@ const Navbar = () => {
       >
         Home
       </NavLink>
-
-      <NavLink
-        to={"/add-blogs"}
-        className={({ isActive, isPending }) =>
-          isPending
-            ? "pending"
-            : isActive
-            ? "text-green-500 font-medium"
-            : "font-medium"
-        }
-      >
+      <button className="font-medium" onClick={handleOpen}>
         Add Blogs
-      </NavLink>
-
+      </button>
       <NavLink
         to={"/all-blogs"}
         className={({ isActive, isPending }) =>
@@ -72,7 +74,8 @@ const Navbar = () => {
   );
   return (
     <div>
-      <div className="navbar max-w-7xl mx-auto py-5 absolute top-0 left-0 right-0 z-50">
+      <AddblogsModal isOpen={isOpen} setIsOpen={setIsOpen}></AddblogsModal>
+      <div className="navbar max-w-[90rem] mx-auto py-5 absolute top-0 left-0 right-0 z-50">
         <div className="navbar-start md:w-[15%] w-[50%]">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

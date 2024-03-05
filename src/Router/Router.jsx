@@ -8,6 +8,7 @@ import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Wishlist from "../Pages/Wishlist";
 import PrivetRoute from "./PrivetRoute";
+import BlogDetails from "../Components/BlogDetails";
 
 const Router = createBrowserRouter([
   {
@@ -30,14 +31,22 @@ const Router = createBrowserRouter([
             <AllBlogs />
           </PrivetRoute>
         ),
+        loader : () => fetch('http://localhost:5000/allBlogs')
       },
       {
         path: "/featured-blogs",
         element: <FeaturedBlogs />,
+        loader : () => fetch('http://localhost:5000/allBlogs')
       },
       {
         path: "/wishlist",
         element: <Wishlist />,
+        loader : () => fetch('http://localhost:5000/wishlist')
+      },
+      {
+        path: "blog/:id",
+        element: <BlogDetails/>,
+        loader : ({params}) => fetch(`http://localhost:5000/allBlogs/${params.id}`)
       },
     ],
   },

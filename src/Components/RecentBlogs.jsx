@@ -1,21 +1,34 @@
-import blogs from "../../public/blogs.json";
 import { IoIosSend } from "react-icons/io";
 import { IoMail } from "react-icons/io5";
-import PropTypes from 'prop-types'; 
+import PropTypes from 'prop-types';
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const RecentBlogs = ({title}) => {
+  const [recentBlogs, setRecentBlogs] = useState([])
+
+  useEffect(() => {
+    axios.get('http://localhost:5000/allBlogs')
+    .then(res => {
+     setRecentBlogs(res.data)
+     console.log(res.data)
+    }).catch(error => {
+      console.log(error)
+    })
+  },[])
+
   return (
     <div className="mt-10 p-5 md:-p-0">
         <hr />
       <p className="text-3xl font-bold my-5">{title}</p>
       <div className="flex flex-col-reverse md:flex-row gap-5 justify-center ">
-        <div className="w-4/2 ">
+        <div className="w-4/2">
           <div className="grid md:grid-cols-2 grid-cols-1 gap-5">
-            {blogs.blogs.slice(0, 4).map((blog, idx) => (
+            {recentBlogs?.slice(0, 4).map((blog, idx) => (
               <div key={idx} className="bg-base-100">
                 <figure>
                   <img
-                    className="rounded md:w-[400px] md:h-[280px]"
+                    className="rounded md:w-[500px] md:h-[300px]"
                     src={blog.image}
                     alt="Shoes"
                   />
