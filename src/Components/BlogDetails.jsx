@@ -5,6 +5,7 @@ const BlogDetails = () => {
     const blog = useLoaderData()
     console.log(blog)
     const {_id, image, description, longdescription, date,} = blog;
+    console.log(image)
     return (
         <div>
             <Banner/>
@@ -12,6 +13,7 @@ const BlogDetails = () => {
                 <p>{_id}</p>
                 <img src={image} alt="" />
                 <p>{description}</p>
+                <p>{image}</p>
                 <p>{longdescription}</p>
                 <p>{date}</p>
             </div>

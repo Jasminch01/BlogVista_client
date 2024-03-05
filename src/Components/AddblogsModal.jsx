@@ -15,25 +15,25 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
     description,
     longdescription,
     category,
-    date,
     imageurl,
   }) => {
     const blog = {
       title,
-      imageurl,
+      image: imageurl,
       description,
       longdescription,
       category,
-      date,
     };
 
-    axios.post(`http://localhost:5000/addblogs`, blog)
-    .then((res) => {
-      console.log(res.data)
-    })
-    .catch(error => {
-      console.log(error)
-    })
+    axios
+      .post(`http://localhost:5000/addblogs`, blog)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    // console.log(blog)
     onCancel();
     reset();
   };
@@ -104,18 +104,6 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
               <option value="Creativity">Creativity</option>
             </select>
           </div>
-          <div className="flex flex-col mb-5">
-            <label htmlFor="title" className="mb-2">
-              Date
-            </label>
-            <input
-              className="w-full rounded-md border-2 py-2"
-              type="date"
-              id="date"
-              {...register("date")}
-            />
-          </div>
-
           <div className="flex gap-3 justify-end">
             <button
               onClick={() => onCancel()}

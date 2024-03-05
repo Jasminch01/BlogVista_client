@@ -14,6 +14,7 @@ const Blog = ({ blog }) => {
         console.log(error)
     })
   };
+  console.log(image)
 
   return (
     <Link to={`/blog/${_id}`} className="bg-base-100">
@@ -26,7 +27,7 @@ const Blog = ({ blog }) => {
       </figure>
       <div className="my-5">
         <h2 className="card-title mb-3">{title}</h2>
-        <p>{description}</p>
+        <p>{description.slice(0, 200)}</p>
         <p className="mt-4">April 12, 2024/{category}</p>
       </div>
       <div>
