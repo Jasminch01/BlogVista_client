@@ -31,22 +31,27 @@ const Router = createBrowserRouter([
             <AllBlogs />
           </PrivetRoute>
         ),
-        loader : () => fetch('http://localhost:5000/allBlogs')
+        loader: () => fetch("http://localhost:5000/allBlogs"),
       },
       {
         path: "/featured-blogs",
         element: <FeaturedBlogs />,
-        loader : () => fetch('http://localhost:5000/allBlogs')
+        loader: () => fetch("http://localhost:5000/featured-blogs"),
       },
       {
         path: "/wishlist",
         element: <Wishlist />,
-        loader : () => fetch('http://localhost:5000/wishlist')
+        loader: () => fetch("http://localhost:5000/wishlist"),
       },
       {
         path: "blog/:id",
-        element: <BlogDetails/>,
-        loader : ({params}) => fetch(`http://localhost:5000/allBlogs/${params.id}`)
+        element: (
+          <PrivetRoute>
+            <BlogDetails />
+          </PrivetRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allBlogs/${params.id}`),
       },
     ],
   },

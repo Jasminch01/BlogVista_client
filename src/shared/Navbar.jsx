@@ -101,7 +101,7 @@ const Navbar = () => {
               {navlist}
             </ul>
           </div>
-          <a className="text-2xl font-bold text-green-500">BlogVista</a>
+          <Link to={`/`} className="text-2xl font-bold text-green-500">BlogVista</Link>
         </div>
         <div className="hidden lg:flex">
           <ul className="flex items-center px-1 space-x-4">{navlist}</ul>

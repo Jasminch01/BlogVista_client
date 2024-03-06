@@ -2465,6 +2465,11 @@ json5@^2.2.3:
     object.assign "^4.1.4"
     object.values "^1.1.6"
 
+ka-table@^8.9.0:
+  version "8.9.0"
+  resolved "https://registry.yarnpkg.com/ka-table/-/ka-table-8.9.0.tgz#d630e3479c803d0ce7603097105a8c70711e3c0e"
+  integrity sha512-1EnDv0VYeZYrufUY0DAjhemG0CwXxYVG3y5wQvVCDd5VZtjEFM8iCu0qc86s47+Xwqzx1xz0M0qDPYtpy0mJqA==
+
 keyv@^4.5.3:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.4.tgz#a879a99e29452f942439f2a405e3af8b31d4de93"

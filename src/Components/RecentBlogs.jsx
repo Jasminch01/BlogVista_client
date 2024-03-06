@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Blog from "./Blog";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useForm } from "react-hook-form";
 
 const RecentBlogs = ({ title }) => {
@@ -35,7 +35,6 @@ const RecentBlogs = ({ title }) => {
 
   return (
     <div className="mt-10 p-5 md:-p-0">
-      <Toaster />
       <hr />
       <p className="text-3xl font-bold my-5">{title}</p>
       <div className="flex flex-col-reverse md:flex-row gap-5 justify-center ">
