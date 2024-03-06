@@ -108,13 +108,13 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
               id="category"
               {...register("category")}
             >
-              <option value="remote work">Remote Work</option>
-              <option value="Photography">Photography</option>
-              <option value="Lifestyle">Lifestyle</option>
-              <option value="Home Improvement">Home Improvement</option>
-              <option value="Productivity">Productivity</option>
-              <option value="Parsenal Development">Personal Development</option>
-              <option value="Creativity">Creativity</option>
+              <option value="remotework">Remote Work</option>
+              <option value="photography">Photography</option>
+              <option value="lifestyle">Lifestyle</option>
+              <option value="homeimprovement">Home Improvement</option>
+              <option value="productivity">Productivity</option>
+              <option value="parsenaldevelopment">Personal Development</option>
+              <option value="creativity">Creativity</option>
             </select>
           </div>
           <div className="flex gap-3 justify-end">
