@@ -4,7 +4,7 @@ import { useState } from "react";
 import AddblogsModal from "../Components/AddblogsModal";
 
 const Navbar = () => {
-  const { user, logOut } = UseAuth();
+  const { user, logOut } = UseAuth({});
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate()
 

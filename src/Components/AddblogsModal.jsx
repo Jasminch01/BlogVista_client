@@ -2,9 +2,15 @@ import { useForm } from "react-hook-form";
 import Modal from "./Modal";
 import PropTypes from "prop-types";
 import axios from "axios";
+import UseAuth from "../Hooks/UseAuth";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const AddblogsModal = ({ isOpen, setIsOpen }) => {
   const { handleSubmit, register, reset } = useForm();
+  const { user } = UseAuth({});
+  const navigate = useNavigate();
+
   const onCancel = () => {
     reset();
     setIsOpen(false);
@@ -23,12 +29,17 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
       description,
       longdescription,
       category,
+      author: user?.displayName,
+      authorEmail: user?.email,
+      authorImg: user?.photoURL,
     };
 
     axios
       .post(`http://localhost:5000/addblogs`, blog)
       .then((res) => {
-        console.log(res.data);
+        if (res.data.insertedId) {
+          toast.success("Successfully added blog");
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -37,7 +48,9 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
     onCancel();
     reset();
   };
-
+  if (!user) {
+    navigate("/login");
+  }
   return (
     <div>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
