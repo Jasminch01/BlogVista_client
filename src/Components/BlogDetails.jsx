@@ -1,9 +1,10 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Container from "./Container";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import UseAuth from "../Hooks/UseAuth";
+import UpdateBlogsModal from "./UpdateBlogsModal";
 
 const BlogDetails = () => {
   const { user } = UseAuth({});
@@ -20,20 +21,16 @@ const BlogDetails = () => {
     authorImg,
     authorEmail,
   } = blog;
-
   const { handleSubmit, register, reset } = useForm();
   const [comments, setComments] = useState([]);
   const { displayName, email, photoURL } = user;
-
-  console.log(authorEmail === email);
-
   const commentSubmit = ({ comment }) => {
     const commentDetails = {
       comment,
       commenter: displayName,
       commenterEmail: email,
       profile: photoURL,
-      comment_id : _id,
+      comment_id: _id,
     };
     axios
       .post("http://localhost:5000/comment-blogs", commentDetails)
@@ -44,6 +41,16 @@ const BlogDetails = () => {
         console.log(error);
       });
     reset();
+  };
+  const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+
+  const handleOpen = () => {
+    if (user) {
+      setIsOpen(!isOpen);
+    } else {
+      navigate("/login");
+    }
   };
 
   useEffect(() => {
@@ -84,14 +91,24 @@ const BlogDetails = () => {
               </div>
               {email === authorEmail && (
                 <div>
-                  <button className="p-2 bg-green-400 text-white font-semibold rounded">Update Blog</button>
+                  <UpdateBlogsModal
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
+                    blog = {blog}
+                  ></UpdateBlogsModal>
+                  <button
+                    onClick={() => handleOpen(!isOpen)}
+                    className="p-2 bg-green-400 text-white font-semibold rounded"
+                  >
+                    Update Blog
+                  </button>
                 </div>
               )}
               <div>
                 <p className="text-lg font-bold">Comments : </p>
               </div>
               <div className="space-y-3">
-                {comments &&  (
+                {comments && (
                   <div className="">
                     {comments.map((comment) => (
                       <div

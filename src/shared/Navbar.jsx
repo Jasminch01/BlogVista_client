@@ -16,7 +16,6 @@ const Navbar = () => {
     }
   };
 
-  console.log(isOpen);
   const navlist = (
     <>
       <NavLink
