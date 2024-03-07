@@ -66,9 +66,9 @@ const BlogDetails = () => {
 
   return (
     <div>
-      {/* <Banner /> */}
       <div className="my-20">
         <Container>
+          <hr  className="mb-10"/>
           <div>
             <div className="max-w-4xl mx-auto">
               <p className="text-3xl font-bold my-5">{title}</p>
@@ -94,7 +94,7 @@ const BlogDetails = () => {
                   <UpdateBlogsModal
                     isOpen={isOpen}
                     setIsOpen={setIsOpen}
-                    blog = {blog}
+                    blog={blog}
                   ></UpdateBlogsModal>
                   <button
                     onClick={() => handleOpen(!isOpen)}

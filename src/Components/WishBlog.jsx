@@ -4,20 +4,12 @@ import { Link } from "react-router-dom";
 const WishBlog = ({ blog }) => {
   const { title, category, _id, description, image } = blog;
 
-  const removeFromWishlist = async (id) => {
-    try {
-      const response = await axios.delete(
-        `http://localhost:5000/delete-wishlist/${id}`
-      );
-      console.log(response.data);
-      if (response.data.deletedCount === 1) {
-        console.log("Document removed successfully");
-      } else {
-        console.log("Document not found or already removed");
-      }
-    } catch (error) {
-      console.error("Error removing document:", error);
-    }
+  const removeFromWishList = (id) => {
+    axios.delete(`http://localhost:5000/delete-wishlist/${id}`).then((res) => {
+      console.log(res.data);
+    }).catch(error => {
+      console.log(error)
+    });
   };
 
   return (
@@ -25,7 +17,7 @@ const WishBlog = ({ blog }) => {
       <div>
         <img className="rounded max-w-sm max-h-sm" src={image} alt="Shoes" />
       </div>
-      <div className="my-5 space-y-3">
+      <div className="space-y-3">
         <h2 className="card-title mb-3">{title}</h2>
         <p>{description?.slice(0, 200)}</p>
         <p className="font-semibold">Category: {category}</p>
@@ -35,10 +27,7 @@ const WishBlog = ({ blog }) => {
               Details
             </button>
           </Link>
-          <button
-            onClick={() => removeFromWishlist(_id)}
-            className="py-2 px-3 bg-red-500 text-white rounded-full"
-          >
+          <button onClick={() =>removeFromWishList(_id)} className="py-2 px-3 bg-red-500 text-white rounded-full">
             Remove wishList
           </button>
         </div>

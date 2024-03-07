@@ -10,7 +10,7 @@ const Wishlist = () => {
         {!wishlist || wishlist.length > 0 ? (
           <div className="mt-20 p-5 md:-p-0">
             <hr />
-            <div className="my-20 h-screen">
+            <div className="my-20">
               <div className="space-y-5">
                 {wishlist.map((blog) => (
                   <WishBlog key={blog._id} blog={blog}>

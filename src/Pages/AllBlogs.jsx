@@ -11,6 +11,9 @@ const AllBlogs = () => {
   const blogs = useLoaderData();
   const { register, handleSubmit, reset } = useForm();
   const [categoryList, setCategoryList] = useState([]);
+  const img = "https://i.ibb.co/F4f5J0d/pexels-julia-m-cameron-4144294.jpg"
+  const bannerTitle = "Unleash Your Creativity: Artistic Inspiration and Ideas"
+  const bannerDescription = "Ignite your imagination and tap into your creative potential with inspiring ideas, tips, and resources for artists, writers, and creators of all kinds."
 
   useEffect(() => {
     setCategoryList(blogs);
@@ -35,12 +38,12 @@ const AllBlogs = () => {
 
   return (
     <div>
-      <Banner />
+      <Banner img={img} title={bannerTitle} description={bannerDescription} />
       <Container>
         <div className="mt-10 p-5 md:-p-0">
           <form
             onSubmit={handleSubmit(sarchByCategory)}
-            className="flex  justify-center my-5 gap-3"
+            className="flex justify-center my-5 gap-3"
           >
             <label className="input input-bordered flex items-center gap-2">
               <input

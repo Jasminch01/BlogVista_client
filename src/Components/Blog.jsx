@@ -18,6 +18,7 @@ const Blog = ({ blog }) => {
         console.log(error);
       });
   };
+  console.log(blog)
   return (
     <div>
       <Link to={`/blog/${_id}`} className="bg-base-100">
