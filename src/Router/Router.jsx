@@ -3,7 +3,6 @@ import Layout from "../Layout/Layout";
 import Home from "../Pages/Home";
 import AllBlogs from "../Pages/AllBlogs";
 import FeaturedBlogs from "../Pages/FeaturedBlogs";
-import AddBlogs from "../Pages/AddBlogs";
 import Login from "../Pages/Login";
 import Register from "../Pages/Register";
 import Wishlist from "../Pages/Wishlist";
@@ -20,10 +19,6 @@ const Router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/add-blogs",
-        element: <AddBlogs />,
-      },
-      {
         path: "/all-blogs",
         element: (
           <PrivetRoute>
@@ -35,12 +30,22 @@ const Router = createBrowserRouter([
       },
       {
         path: "/featured-blogs",
-        element: <FeaturedBlogs />,
+        element: (
+          <PrivetRoute>
+            {" "}
+            <FeaturedBlogs />{" "}
+          </PrivetRoute>
+        ),
         loader: () => fetch("http://localhost:5000/featured-blogs"),
       },
       {
         path: "/wishlist",
-        element: <Wishlist />,
+        element: (
+          <PrivetRoute>
+            {" "}
+            <Wishlist />{" "}
+          </PrivetRoute>
+        ),
         loader: () => fetch("http://localhost:5000/wishlist"),
       },
       {

@@ -39,6 +39,7 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Successfully added blog");
+          navigate('/all-blogs')
         }
       })
       .catch((error) => {
@@ -116,7 +117,7 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
               <option value="parsenaldevelopment">Personal Development</option>
               <option value="creativity">Creativity</option>
             </select>
-          </div>
+          </div> 
           <div className="flex gap-3 justify-end">
             <button
               onClick={() => onCancel()}
