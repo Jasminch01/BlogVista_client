@@ -33,7 +33,7 @@ const BlogDetails = () => {
       comment_id: _id,
     };
     axios
-      .post("http://localhost:5000/comment-blogs", commentDetails)
+      .post("https://blog-vista-server.vercel.app/comment-blogs", commentDetails)
       .then((res) => {
         console.log(res);
       })
@@ -55,7 +55,7 @@ const BlogDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/comments/${_id}`)
+      .get(`https://blog-vista-server.vercel.app/comments/${_id}`)
       .then((res) => {
         setComments(res.data);
       })

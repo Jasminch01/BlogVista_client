@@ -14,7 +14,7 @@ const RecentBlogs = ({ title }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/recentBlogs")
+      .get("https://blog-vista-server.vercel.app/recentBlogs")
       .then((res) => {
         setRecentBlogs(res.data);
         console.log(res.data);
@@ -26,7 +26,7 @@ const RecentBlogs = ({ title }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/categores-cunt")
+      .get("https://blog-vista-server.vercel.app/categores-cunt")
       .then((res) => {
         setCategoriesCount(res.data);
         console.log(res.data);

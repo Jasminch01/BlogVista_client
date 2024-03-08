@@ -26,7 +26,7 @@ const Router = createBrowserRouter([
             <AllBlogs />
           </PrivetRoute>
         ),
-        loader: () => fetch("http://localhost:5000/allBlogs"),
+        loader: () => fetch("https://blog-vista-server.vercel.app/allBlogs"),
       },
       {
         path: "/featured-blogs",
@@ -36,7 +36,7 @@ const Router = createBrowserRouter([
             <FeaturedBlogs />{" "}
           </PrivetRoute>
         ),
-        loader: () => fetch("http://localhost:5000/featured-blogs"),
+        loader: () => fetch("https://blog-vista-server.vercel.app/featured-blogs"),
       },
       {
         path: "/wishlist",
@@ -55,7 +55,7 @@ const Router = createBrowserRouter([
           </PrivetRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allBlogs/${params.id}`),
+          fetch(`https://blog-vista-server.vercel.app/allBlogs/${params.id}`),
       },
     ],
   },

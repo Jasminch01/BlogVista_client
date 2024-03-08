@@ -7,7 +7,7 @@ const WishBlog = ({ blog, refetch }) => {
 
   const removeFromWishList = (id) => {
     axios
-      .delete(`http://localhost:5000/delete-wishlist/${id}`)
+      .delete(`https://blog-vista-server.vercel.app/delete-wishlist/${id}`)
       .then((res) => {
         if (res.data.deletedCount) {
           toast.success("Blog remove form wislist successfully");

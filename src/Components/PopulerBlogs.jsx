@@ -6,7 +6,7 @@ const PopulerBlogs = () => {
   const [populer, setPopuler] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/allBlogs`)
+      .get(`https://blog-vista-server.vercel.app/allBlogs`)
       .then((res) => {
         setPopuler(res.data);
       })

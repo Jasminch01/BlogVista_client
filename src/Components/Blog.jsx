@@ -22,7 +22,7 @@ const Blog = ({ blog }) => {
       userEmail: user.email,
     };
     axios
-      .post("http://localhost:5000/wishlist", data)
+      .post("https://blog-vista-server.vercel.app/wishlist", data)
       .then((res) => {
         if (res.data.acknowledged) {
           toast.success("Successfully added wishlist");

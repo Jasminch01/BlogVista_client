@@ -10,7 +10,7 @@ const Wishlist = () => {
   const { email } = user;
 
   const getWishList = async () => {
-    const { data } = await axios.get(`http://localhost:5000/wishlist/${email}`);
+    const { data } = await axios.get(`https://blog-vista-server.vercel.app/wishlist/${email}`);
     return data;
   };
 

@@ -38,7 +38,7 @@ const UpdateBlogsModal = ({ isOpen, setIsOpen, blog }) => {
     console.log(blog);
 
     axios
-      .patch(`http://localhost:5000/update/${_id}`, blog)
+      .patch(`https://blog-vista-server.vercel.app/update/${_id}`, blog)
       .then((res) => {
         console.log(res);
         if (res.data.modifiedCount) {

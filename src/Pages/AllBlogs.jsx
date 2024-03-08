@@ -27,7 +27,7 @@ const AllBlogs = () => {
     const category = search.toLowerCase();
     console.log(category);
     axios
-      .get(` http://localhost:5000/allBlogs/category?category=${category}`)
+      .get(` https://blog-vista-server.vercel.app/allBlogs/category?category=${category}`)
       .then((res) => {
         setCategoryList(res.data);
         console.log(res.data);

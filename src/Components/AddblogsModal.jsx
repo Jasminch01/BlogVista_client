@@ -35,7 +35,7 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
     };
 
     axios
-      .post(`http://localhost:5000/addblogs`, blog)
+      .post(`https://blog-vista-server.vercel.app/addblogs`, blog)
       .then((res) => {
         if (res.data.insertedId) {
           toast.success("Successfully added blog");
