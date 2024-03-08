@@ -5,15 +5,19 @@ import Container from "../Components/Container";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import UseAuth from "../Hooks/UseAuth";
 
 const AllBlogs = () => {
   const title = "All Blogs";
   const blogs = useLoaderData();
   const { register, handleSubmit, reset } = useForm();
   const [categoryList, setCategoryList] = useState([]);
+  const {loading, } = UseAuth()
   const img = "https://i.ibb.co/F4f5J0d/pexels-julia-m-cameron-4144294.jpg"
   const bannerTitle = "Unleash Your Creativity: Artistic Inspiration and Ideas"
   const bannerDescription = "Ignite your imagination and tap into your creative potential with inspiring ideas, tips, and resources for artists, writers, and creators of all kinds."
+
+  console.log(loading)
 
   useEffect(() => {
     setCategoryList(blogs);

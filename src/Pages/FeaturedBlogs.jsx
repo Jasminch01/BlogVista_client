@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData} from "react-router-dom";
 import Banner from "../Components/Banner";
 import Container from "../Components/Container";
 import DataTable from "react-data-table-component";

@@ -11,8 +11,9 @@ const Login = () => {
   const googleLogin = () => {
     signInGoogle()
       .then((res) => {
-        console.log(res);
-        navigate(location?.state ? location.state : "/");
+        console.log(location.state)
+        console.log(res)
+          navigate(location?.state ? location.state : "/");
       })
       .catch((error) => {
         console.log(error);

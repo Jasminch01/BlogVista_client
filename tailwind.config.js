@@ -1,14 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Karla: "'Roboto', sans-serif",
+      },
+    },
   },
+
   plugins: [require("daisyui")],
-  daisyui : {
-    themes : ['light']
-  }
-}
+  daisyui: {
+    themes: ["light"],
+  },
+};

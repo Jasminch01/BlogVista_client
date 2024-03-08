@@ -49,6 +49,7 @@ const AddblogsModal = ({ isOpen, setIsOpen }) => {
     onCancel();
     reset();
   };
+  
   if (!user) {
     navigate("/login");
   }

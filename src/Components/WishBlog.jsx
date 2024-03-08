@@ -1,15 +1,22 @@
 import axios from "axios";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
-const WishBlog = ({ blog }) => {
+const WishBlog = ({ blog, refetch }) => {
   const { title, category, _id, description, image } = blog;
 
   const removeFromWishList = (id) => {
-    axios.delete(`http://localhost:5000/delete-wishlist/${id}`).then((res) => {
-      console.log(res.data);
-    }).catch(error => {
-      console.log(error)
-    });
+    axios
+      .delete(`http://localhost:5000/delete-wishlist/${id}`)
+      .then((res) => {
+        if (res.data.deletedCount) {
+          toast.success("Blog remove form wislist successfully");
+          refetch();
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
@@ -27,7 +34,10 @@ const WishBlog = ({ blog }) => {
               Details
             </button>
           </Link>
-          <button onClick={() =>removeFromWishList(_id)} className="py-2 px-3 bg-red-500 text-white rounded-full">
+          <button
+            onClick={() => removeFromWishList(_id)}
+            className="py-2 px-3 bg-red-500 text-white rounded-full"
+          >
             Remove wishList
           </button>
         </div>
