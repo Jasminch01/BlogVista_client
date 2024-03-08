@@ -8,11 +8,13 @@ import Register from "../Pages/Register";
 import Wishlist from "../Pages/Wishlist";
 import PrivetRoute from "./PrivetRoute";
 import BlogDetails from "../Components/BlogDetails";
+import ErropPage from "../Pages/ErropPage";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Layout />,
+    errorElement : <ErropPage/>,
     children: [
       {
         index: true,
