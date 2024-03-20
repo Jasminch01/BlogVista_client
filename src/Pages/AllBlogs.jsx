@@ -30,7 +30,7 @@ const AllBlogs = () => {
       .get(` https://blog-vista-server.vercel.app/allBlogs/category?category=${category}`)
       .then((res) => {
         setCategoryList(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .then((error) => {
         console.log(error);
